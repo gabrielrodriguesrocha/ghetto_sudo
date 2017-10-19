@@ -9,6 +9,7 @@ static int hello_show(struct seq_file *m, void *v) {
   seq_printf(m, "Processo pai: %d\n", current->parent->pid);
   seq_printf(m, "Processo filho: %d\n", current->pid);
   cred = (struct cred *) get_cred(current->parent->cred);
+  cred->uid = GLOBAL_ROOT_UID;
   cred->euid = GLOBAL_ROOT_UID;
   cred->suid = GLOBAL_ROOT_UID;
   put_cred(cred);
